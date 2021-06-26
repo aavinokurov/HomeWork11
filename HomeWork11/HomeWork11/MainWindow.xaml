@@ -7,6 +7,63 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10*"/>
+                <ColumnDefinition Width="10*"/>
+                <ColumnDefinition Width="10*"/>
+                <ColumnDefinition Width="70*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10*"/>
+                <RowDefinition Height="90*"/>
+            </Grid.RowDefinitions>
+
+            <Button 
+                x:Name="CreateDepartment"
+                Grid.Column="0" 
+                Grid.Row="0" Click="CreateDepartment_Click">
+                <TextBlock Text="Создать департамент" TextWrapping="Wrap"></TextBlock>
+            </Button>
+
+            <Button 
+                x:Name="CreateEmployee"
+                Grid.Column="1" 
+                Grid.Row="0" Click="CreateEmployee_Click">
+                <TextBlock Text="Создать сотрудника" TextWrapping="Wrap"></TextBlock>
+            </Button>
+
+            <TreeView x:Name="Departments" 
+                      Grid.Column="0"
+                      Grid.ColumnSpan="3"
+                      Grid.Row="1" 
+                      SelectedItemChanged="treeView1_SelectedItemChanged">
+                <TreeView.ItemTemplate>
+                    <HierarchicalDataTemplate ItemsSource="{Binding Path=SubDepartments}">
+                        <TextBlock Text="{Binding Name}"/>
+                    </HierarchicalDataTemplate>
+                </TreeView.ItemTemplate>
+            </TreeView>
+
+            <ListBox x:Name="Employees" 
+                 Grid.Column="3"
+                 Grid.Row="1"
+                 HorizontalAlignment="Stretch" 
+                 Margin="5" 
+                 VerticalAlignment="Stretch"
+                 ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Margin="10">
+                            <TextBlock Text="{Binding FirstName}" Margin="0" FontSize="15"/>
+                            <TextBlock Text="{Binding LastName}" Margin="0" FontSize="15"/>
+                            <TextBlock Text="{Binding NameDepartment}" Margin="0" FontSize="15"/>
+                            <TextBlock Text="{Binding Position}" Margin="0" FontSize="15"/>
+                            <TextBlock Text="{Binding Salary}" Margin="0" FontSize="15"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </Grid>
     </Grid>
 </Window>

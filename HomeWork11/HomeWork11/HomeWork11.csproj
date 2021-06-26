@@ -55,6 +55,29 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="CreateDepartmentWindow.xaml.cs">
+      <DependentUpon>CreateDepartmentWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CreateEmployee.xaml.cs">
+      <DependentUpon>CreateEmployee.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Department.cs" />
+    <Compile Include="Director.cs" />
+    <Compile Include="EmployeeEnum.cs" />
+    <Compile Include="EmployeeViewModel.cs" />
+    <Compile Include="EnumToItemsSource.cs" />
+    <Compile Include="Intern.cs" />
+    <Compile Include="Employee.cs" />
+    <Compile Include="Organization.cs" />
+    <Compile Include="Worker.cs" />
+    <Page Include="CreateDepartmentWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CreateEmployee.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
