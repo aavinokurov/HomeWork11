@@ -34,6 +34,10 @@ namespace HomeWork11
 
         public void AddEmployee(EmployeeEnum employeeType, string firstName, string lastName)
         {
+            if (Employees.Any(e => e is Director) && employeeType == EmployeeEnum.Director)
+            {
+                return;
+            }
             Employee employee = null;
             switch (employeeType)
             {

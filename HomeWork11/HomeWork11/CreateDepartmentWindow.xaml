@@ -17,13 +17,13 @@
             <RowDefinition Height="30*"/>
             <RowDefinition Height="35*"/>
         </Grid.RowDefinitions>
-        
-        <TextBox
+
+        <TextBlock
             Text="Имя : "
             Grid.Row="1"
             Grid.Column="0"
             
-            ></TextBox>
+            ></TextBlock>
         
         <TextBox
             Grid.Row="1"

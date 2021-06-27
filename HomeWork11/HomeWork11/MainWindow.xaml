@@ -33,6 +33,12 @@
                 <TextBlock Text="Создать сотрудника" TextWrapping="Wrap"></TextBlock>
             </Button>
 
+            <TextBlock
+                x:Name="NameOrganization"
+                Grid.Column="3"
+                Grid.Row="0"
+                ></TextBlock>
+
             <TreeView x:Name="Departments" 
                       Grid.Column="0"
                       Grid.ColumnSpan="3"

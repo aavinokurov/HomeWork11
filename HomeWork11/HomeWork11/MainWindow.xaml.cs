@@ -27,12 +27,16 @@ namespace HomeWork11
         {
             InitializeComponent();
 
-            organization = new Organization("Организация");
+            organization = new Organization("ИмяОрганизации");
+            NameOrganization.Text = $"Организация : {organization.Name}";
 
             var department1 = new Department("department1");
             department1.AddSubDepartment(new Department("department1_1"));
             var department1_2 = new Department("department1_2");
             department1_2.AddSubDepartment(new Department("department1_2_1"));
+            department1_2.AddEmployee(EmployeeEnum.Director, "", "");
+            department1_2.AddEmployee(EmployeeEnum.Intern, "Иван", "Иванов");
+            department1_2.AddEmployee(EmployeeEnum.Intern, "Вася", "Пупкин");
             department1.AddSubDepartment(department1_2);
             department1.AddSubDepartment(new Department("department1_3"));
             var department2 = new Department("department2");
@@ -70,7 +74,11 @@ namespace HomeWork11
 
         private void CreateEmployee_Click(object sender, RoutedEventArgs e)
         {
-            var createEmployeeWindow = new CreateEmployee();
+            if (currentDepartment == null)
+            {
+                return;
+            }
+            var createEmployeeWindow = new CreateEmployee(currentDepartment);
             createEmployeeWindow.Show();
         }
     }

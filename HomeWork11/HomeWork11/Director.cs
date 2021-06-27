@@ -24,7 +24,7 @@ namespace HomeWork11
 
             salary *= 0.15m;
 
-            return salary <= 1300 ? 1300 : salary;
+            return salary < 1300 ? 1300 : salary;
         }
 
         private decimal GetSalaryEmployeesInDepartment(Department department)

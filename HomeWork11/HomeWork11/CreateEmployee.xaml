@@ -17,12 +17,12 @@
             <RowDefinition Height="25*"/>
             <RowDefinition Height="25*"/>
         </Grid.RowDefinitions>
-        <TextBox
+        <TextBlock
             Text="Тип сотрудника : "
             Grid.Row="0"
             Grid.Column="0"
             
-            ></TextBox>
+            ></TextBlock>
 
         <ComboBox
             x:Name="EmployeeType"
@@ -31,12 +31,12 @@
             ItemsSource="{Binding Source={local:EnumToItemsSource {x:Type local:EmployeeEnum}}}"
             ></ComboBox>
 
-        <TextBox
+        <TextBlock
             Text="Имя : "
             Grid.Row="1"
             Grid.Column="0"
             
-            ></TextBox>
+            ></TextBlock>
 
         <TextBox
             Grid.Row="1"
@@ -44,12 +44,12 @@
             x:Name="FirstName"
          ></TextBox>
 
-        <TextBox
+        <TextBlock
             Text="Фамилия : "
             Grid.Row="2"
             Grid.Column="0"
             
-            ></TextBox>
+            ></TextBlock>
 
         <TextBox
             Grid.Row="2"
